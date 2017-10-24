@@ -1,0 +1,6 @@
+<table>
+  <tr><th> <%= t('username') %></th><th> <%= t('balance') %></th></tr>
+  <%- @users.each_with_index do |u, i| -%>
+      <tr class="<%= row_class(i)%>"><td><%=link_to(u.username, user_path(u))%></td><td><%= number_to_currency(u.balance) %></td></tr>
+  <%- end -%>
+</table>

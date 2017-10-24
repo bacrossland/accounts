@@ -4,8 +4,31 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  transaction_log: one
+  user: one
+  record_type: credit
+  amount: 552.2931303410837
+two:
+  transaction_log: one
+  user: two
+  record_type: credit
+  amount: 633.1497179916641
+three:
+  transaction_log: one
+  user: one
+  record_type: debit
+  amount: 384.61670768440615
+four:
+  transaction_log: one
+  user: two
+  record_type: debit
+  amount: 955.291966268199
+five:
+  transaction_log: one
+  user: two
+  record_type: 'start_autopay'
+six:
+  transaction_log: one
+  user: two
+  record_type: 'end_autopay'

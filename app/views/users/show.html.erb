@@ -1,0 +1,6 @@
+<%= @user.username %>
+<%= t('start_autopay') %>
+<%- @user.start_autopays.each do |ap| -%>
+    <%= t('id') %>: <%= ap.id %><br/>
+    <%= t('processed_at') %>: <%= ap.processed_at %>
+<%- end -%>

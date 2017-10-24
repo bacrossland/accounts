@@ -30,4 +30,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  balance: Balance
+  credit: Credit
+  debit: Debit
+  end_autopay: End Autopay
+  end_autopay_count: End Autopay Count
+  id: ID
+  processed_at: Processed At
+  start_autopay: Start Autopay
+  start_autopay_count: Start Autopay Count
+  username: Username
+
