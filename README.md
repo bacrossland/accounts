@@ -1,4 +1,6 @@
-# README
+[![Build Status](https://travis-ci.org/bacrossland/accounts.svg?branch=master)](https://travis-ci.org/bacrossland/accounts)
+
+# Accounts
 
 The Accounts application reads a transaction log dat file for display and reporting purposes.
 The current dat log is located at db/seed_data/data.dat. The  
@@ -27,3 +29,7 @@ Run the following commands to install and start this application.
    rails db:setup
    rails server
 ```
+
+### Original Scope
+
+This application was built to answer the questions outlined in the [SCOPE.md](SCOPE.md) file.
