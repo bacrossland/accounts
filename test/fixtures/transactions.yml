@@ -32,3 +32,13 @@ six:
   transaction_log: one
   user: two
   record_type: 'end_autopay'
+seven:
+  transaction_log: one
+  user: three
+  record_type: credit
+  amount: 384.61670768440615
+eight:
+  transaction_log: one
+  user: three
+  record_type: debit
+  amount: 384.61670768440615
