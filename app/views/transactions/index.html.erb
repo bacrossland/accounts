@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><%= t('transaction') %></th>
+    <th scope="col"><%= t('amount') %></th>
+    <th scope="col"><%= t('processed_at') %></th>
+    <th scope="col"><%= t('username') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%- @transactions.each do |t| -%>
+      <tr>
+        <th class="row"><%= t.id %></th>
+        <td><%= t.record_type.camelize %></td>
+        <td><%= number_to_currency(t.amount) %></td>
+        <td><%= t.processed_at %></td>
+        <td><%=link_to(t.user.username, user_path(t.user_id))%></td>
+      </tr>
+  <%- end -%>
+  </tbody>
+</table>

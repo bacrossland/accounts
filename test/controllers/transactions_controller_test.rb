@@ -10,4 +10,9 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
     get transaction_path(transactions(:one))
     assert_response :success
   end
+
+  test 'summary' do
+    get root_path
+    assert_response :success
+  end
 end

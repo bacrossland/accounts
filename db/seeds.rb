@@ -70,6 +70,8 @@ TransactionLog.transaction do
       progressbar.increment
     end
 
+    raise "ERROR: The database record count of #{Transaction.count} doesn't match the #{datafile} record count of #{num_records}" unless Transaction.count == num_records
+
   rescue => e
     puts e.message
     raise ActiveRecord::Rollback

@@ -1,6 +1,40 @@
-<%= @user.username %>
-<%= t('start_autopay') %>
-<%- @user.start_autopays.each do |ap| -%>
-    <%= t('id') %>: <%= ap.id %><br/>
-    <%= t('processed_at') %>: <%= ap.processed_at %>
-<%- end -%>
+<table class="table table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><%= t('username') %></th>
+    <th scope="col"><%= t('balance') %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <%- balance_class = "" -%>
+    <%- balance_class = "table-success" if @user.balance > 0 -%>
+    <%- balance_class = "table-danger" if @user.balance < 0 -%>
+    <tr class="<%= balance_class %>">
+      <th class="row"><%= @user.id %></th>
+      <td><%= @user.username %></td>
+      <td><%= number_to_currency(@user.balance) %></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><%= t('transaction') %></th>
+    <th scope="col"><%= t('amount') %></th>
+    <th scope="col"><%= t('processed_at') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%- @user.transactions.each do |t| -%>
+      <tr>
+        <th class="row"><%= t.id %></th>
+        <td><%= t.record_type.camelize %></td>
+        <td><%= number_to_currency(t.amount) %></td>
+        <td><%= t.processed_at %></td>
+      </tr>
+  <%- end -%>
+  </tbody>
+</table>

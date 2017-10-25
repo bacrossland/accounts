@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col"><%= t('credit_total') %></th>
+    <th scope="col"><%= t('debit_total') %></th>
+    <th scope="col"><%= t('start_autopay_count') %></th>
+    <th scope="col"><%= t('end_autopay_count') %></th>
+    <th scope="col"><%= t('balance_for') + ' '%><%= link_to(@user.username.to_s, user_path(@user)) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%- balance_class = "" -%>
+  <%- balance_class = "table-success" if @user.balance > 0 -%>
+  <%- balance_class = "table-danger" if @user.balance < 0 -%>
+  <tr>
+    <th><%= number_to_currency( @credit_total) %></th>
+    <th><%= number_to_currency(@debit_total) %></th>
+    <th><%= @start_autopay_count %></th>
+    <th><%= @end_autopay_count %></th>
+    <td class="<%= balance_class %>"><%= number_to_currency(@user.balance) %></td>
+  </tr>
+  </tbody>
+</table>

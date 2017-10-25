@@ -30,14 +30,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  accounts: Accounts
+  amount: Amount
   balance: Balance
+  balance_for: Balance For
   credit: Credit
+  credit_total: Total Credit Amount
   debit: Debit
+  debit_total: Total Debit Amount
   end_autopay: End Autopay
-  end_autopay_count: End Autopay Count
+  end_autopay_count: Ended Autopay Count
+  home: Home
   id: ID
   processed_at: Processed At
   start_autopay: Start Autopay
-  start_autopay_count: Start Autopay Count
+  start_autopay_count: Started Autopay Count
+  transaction: Transaction
+  transactions: Transactions
+  summary: Summary
   username: Username
+  users: Users
 

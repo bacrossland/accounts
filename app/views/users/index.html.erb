@@ -1,6 +1,21 @@
-<table>
-  <tr><th> <%= t('username') %></th><th> <%= t('balance') %></th></tr>
-  <%- @users.each_with_index do |u, i| -%>
-      <tr class="<%= row_class(i)%>"><td><%=link_to(u.username, user_path(u))%></td><td><%= number_to_currency(u.balance) %></td></tr>
-  <%- end -%>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t('username') %></th>
+      <th scope="col"><%= t('balance') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @users.each do |u| -%>
+      <%- balance_class = "" -%>
+      <%- balance_class = "table-success" if u.balance > 0 -%>
+      <%- balance_class = "table-danger" if u.balance < 0 -%>
+      <tr class="<%= balance_class %>">
+        <th class="row"><%= u.id %></th>
+        <td><%=link_to(u.username, user_path(u))%></td>
+        <td><%= number_to_currency(u.balance) %></td>
+      </tr>
+    <%- end -%>
+  </tbody>
 </table>
