@@ -1,7 +1,7 @@
 # README
 
 The Accounts application reads a transaction log dat file for display and reporting purposes.
-The current dat log is located in the db/seed_data folder. 
+The current dat log is located at db/seed_data/data.dat. The  
 
 
 ### Ruby Version
@@ -9,24 +9,21 @@ The current dat log is located in the db/seed_data folder.
 The ruby version that the application has been built under is 2.4.1. If you are using RVM, .ruby-version and .ruby-gemset 
 files are included for ease of installation and operation.
 
- 
+### Database
 
-Things you may want to cover:
+The application uses a SQLite database.
 
-* Ruby version
+### Installation and Running
 
-* System dependencies
+To install and run the application, clone this repository after you have made sure you have ruby 2.4.1 installed 
+and the bundle gem installed.
 
-* Configuration
+To install the bundle gem run ```gem install bundle```
 
-* Database creation
+Run the following commands to install and start this application.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+   bundle install 
+   rails db:setup
+   rails server
+```
