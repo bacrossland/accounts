@@ -3,12 +3,12 @@
 # Accounts
 
 The Accounts application reads a transaction log dat file for display and reporting purposes.
-The current dat log is located at db/seed_data/data.dat. The  
+The current dat log is located at db/seed_data/data.dat.
 
 
 ### Ruby Version
 
-The ruby version that the application has been built under is 2.4.1. If you are using RVM, .ruby-version and .ruby-gemset 
+The ruby version used is 2.4.1. If you are using RVM, .ruby-version and .ruby-gemset 
 files are included for ease of installation and operation.
 
 ### Database
@@ -29,6 +29,7 @@ Run the following commands to install and start this application.
    rails db:setup
    rails server
 ```
+After the server is running, open a webrowser and navigate to the address displayed in the terminal.
 
 ### Original Scope
 
