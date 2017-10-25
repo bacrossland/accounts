@@ -34,3 +34,10 @@ After the server is running, open a webrowser and navigate to the address displa
 ### Original Scope
 
 This application was built to answer the questions outlined in the [SCOPE.md](SCOPE.md) file.
+
+## Notes on Amount Storage and Display
+
+The data.dat file contains USD amounts defined as 8 byte (float64). These are stored in the database 
+as decimals with a precision of 53 and scale of 17. All math on the amounts is done as decimals and then displayed 
+using the number_to_currency method in Rails. The display method simply rounds the amount to two decimal places and 
+formats it to display in USD.
